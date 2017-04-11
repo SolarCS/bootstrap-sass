@@ -1010,8 +1010,7 @@ if (typeof jQuery === 'undefined') {
 
       that.enforceFocus()
 
-      var e = $.Event('modal:shown', { relatedTarget: _relatedTarget })
-      that.$element.trigger(e)
+      that.$element.trigger($.Event('inserted.bs.modal', { relatedTarget: _relatedTarget }))
 
       var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
 
@@ -1465,8 +1464,6 @@ if (typeof jQuery === 'undefined') {
 
       this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
       this.$element.trigger('inserted.bs.' + this.type)
-
-      that.$element.trigger('rendered.bs.' + that.type)
 
       var pos          = this.getPosition()
       var actualWidth  = $tip[0].offsetWidth

@@ -94,8 +94,7 @@
 
       that.enforceFocus()
 
-      var e = $.Event('modal:shown', { relatedTarget: _relatedTarget })
-      that.$element.trigger(e)
+      that.$element.trigger($.Event('inserted.bs.modal', { relatedTarget: _relatedTarget }))
 
       var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
 
