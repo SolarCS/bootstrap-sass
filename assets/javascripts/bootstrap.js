@@ -1021,6 +1021,8 @@ if (typeof jQuery === 'undefined') {
 
       that.enforceFocus()
 
+      that.$element.trigger($.Event('inserted.bs.modal', { relatedTarget: _relatedTarget }))
+
       var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
 
       transition ?
